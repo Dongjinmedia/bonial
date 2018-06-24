@@ -1,0 +1,2 @@
+# bonial
+terraform configuration exercise
