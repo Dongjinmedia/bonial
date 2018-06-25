@@ -4,7 +4,7 @@ resource "aws_security_group" "rvg_test" {
   name = "rvg_test"
   description = "default VPC security group"
 
-  # TCP access
+  # inbound TCP access
   ingress {
     from_port = 22
     to_port = 22
@@ -12,7 +12,7 @@ resource "aws_security_group" "rvg_test" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # HTTP access from anywhere
+  # inbound HTTP access
   ingress {
     from_port = 80
     to_port = 80
@@ -20,6 +20,16 @@ resource "aws_security_group" "rvg_test" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+  # outbound ALL traffic
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
 
 #################### Instances ###########################
 
@@ -42,7 +52,7 @@ resource "aws_elb" "inbox-test" {
   security_groups = ["${aws_security_group.rvg_test.id}"]
 
   listener {
-    instance_port = 4000
+    instance_port = 80
     instance_protocol = "http"
     lb_port = 80
     lb_protocol = "http"
@@ -51,7 +61,7 @@ resource "aws_elb" "inbox-test" {
   health_check {
     healthy_threshold = 2
     unhealthy_threshold = 2
-    target = "HTTP:4000/ping"
+    target = "HTTP:80/index.html"
     interval = 10
     timeout = 2
   }
