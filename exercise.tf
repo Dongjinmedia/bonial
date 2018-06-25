@@ -1,11 +1,3 @@
-################### AWS ###################################
-
-provider "aws" {
-  access_key = "AKIAJYLWEYJGRSYVC6CQ"
-  secret_key = "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"
-  region     = "ap-northeast-2"
-}
-
 #################### Security Group ########################
 
 resource "aws_security_group" "rvg_test" {
