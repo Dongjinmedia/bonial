@@ -1,3 +1,11 @@
+################### AWS ###################################
+
+provider "aws" {
+  access_key = "access_key here"
+  secret_key = "secret_key here"
+  region     = "ap-northeast-2"
+}
+
 #################### Security Group ########################
 
 resource "aws_security_group" "rvg_test" {
