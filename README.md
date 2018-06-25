@@ -1,4 +1,4 @@
-# bonial
+# Bonial Project
 terraform configuration exercise
 1. Download and Unzip terraform from official site.
 2. Create AWS account.
