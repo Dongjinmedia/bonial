@@ -1,9 +1,10 @@
 # Bonial Project
-terraform configuration exercise
+Exercise 2 - terraform configuration exercise
+---------------------------------------------
 1. Download and Unzip terraform from official site.
 2. Create AWS account.
 3. Make configuration file named "exercise.tf" with AWS IAM and key pair and AMI information.
-4. Run #terraform init for initialization.
+4. Run '''#terraform''' init for initialization.
 5. Run #terraform apply for apply changes and terraform show for current state.
 6. Now, AWS setup is completed with Debian Stretch EC2 instances and Elastic loadbalancer.
 7. Install docker on EC2 instances with $sudo curl -sSL https://get.docker.com/ | sh
