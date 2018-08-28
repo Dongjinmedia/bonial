@@ -1,4 +1,4 @@
-# Bonial Project
+# The MultiCloudService
 Exercise 2 - Terraform
 ---------------------------------------------
 1. Download and Unzip terraform from official site at ***https://www.terraform.io/downloads.html***.
